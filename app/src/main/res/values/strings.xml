@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Teste</string>
+    <string name="btnIncluir">Incluir</string>
+    <string name="btnAlterar">Alterar</string>
+    <string name="btnExcluir">Excluir</string>
+    <string name="btnConsultar">Consultar</string>
+    <string name="lblBtnCodigo">Código</string>
+    <string name="lblDescricao">Descrição</string>
+    <string name="hintPrecoVenda">Preço de Venda</string>
+    <string name="btnOk">OK</string>
+    <string name="lblUltimoRegistro">Último registro incluído:</string>
 </resources>

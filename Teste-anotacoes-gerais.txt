@@ -1,0 +1,18 @@
+Teste = = = = =  Uso SQLite
+---------------------------
+Anotações gerais
+----------------
+
+
+Implementação SQLite - Paulo Vinicius Moreira Dutra
+---------------------------------------------------
+ - Aula 11
+	https://www.youtube.com/watch?v=siOjlXa6eNQ
+
+- Aula 12
+	https://www.youtube.com/watch?v=Wz6-YPgHl4I
+	
+	
+	
+LEITOR CODIGO DE BARRAS
+https://www.thiengo.com.br/leitor-de-codigos-no-android-com-barcode-scanner-api-zxing
