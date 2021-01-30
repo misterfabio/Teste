@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CstrMkMAct2"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_cd_prd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o código"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Código:"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+    <TextView
+        android:id="@+id/tv_cd_prd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="resultado do campo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Marca:"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+    <TextView
+        android:id="@+id/tv_mrc_prd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="resultado do campo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição pricipal:"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+    <TextView
+        android:id="@+id/tv_dcr_ppl_prd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="resultado do campo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição secundária:"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+    <TextView
+        android:id="@+id/tv_dcr_sec_prd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="resultado do campo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Especificação:"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+    <TextView
+        android:id="@+id/tv_epfc_prd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="resultado do campo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preço:"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+    <TextView
+        android:id="@+id/tv_prec_vnd_prd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="resultado do campo"/>
+
+
+</LinearLayout>

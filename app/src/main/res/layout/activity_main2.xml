@@ -5,30 +5,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <Button
-        android:id="@+id/btnIncr"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btnIncluir"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Base de Dados: Teste"
+            android:textAppearance="@android:style/TextAppearance.Large"/>
+        <Button
+            android:id="@+id/btnIncrTst"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnIncluir"
+            android:layout_marginTop="12dp"/>
+        <Button
+            android:id="@+id/btnAltrTst"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnAlterar"
+            android:layout_marginTop="12dp"/>
+        <Button
+            android:id="@+id/btnExcrTst"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnExcluir"
+            android:layout_marginTop="12dp"/>
+        <Button
+            android:id="@+id/btnCstrTst"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnConsultar"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnAltr"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btnAlterar" />
-
-    <Button
-        android:id="@+id/btnExcr"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btnExcluir" />
-
-    <Button
-        android:id="@+id/btnCstr"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/btnConsultar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Base de Dados: Mkm"
+            android:textAppearance="@android:style/TextAppearance.Large"/>
+        <Button
+            android:id="@+id/btnCstrMkm"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnConsultar"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
 
 </LinearLayout>

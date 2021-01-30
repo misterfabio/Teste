@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import com.fabiocarvalho.teste.DataBase.TesteOpenHelper;
+import com.fabiocarvalho.teste.Dominio.Entidades.Produto;
 import com.fabiocarvalho.teste.Dominio.Repositorio.ProdutoRepositorio;
+
+import java.util.List;
 
 public class IncluirActivity extends PrincipalActivity{
 
@@ -20,13 +24,13 @@ public class IncluirActivity extends PrincipalActivity{
     private EditText edtTxCdPrd;
     private EditText edtTxDcr;
     private EditText edtTxPrecVnd;
+    private TextView rstdQuery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_incluir);
 
-        Toast.makeText(this,"Incluir registro.", Toast.LENGTH_LONG).show();
         criarConexao();
 
         final Button btnOk = findViewById(R.id.btnOk);
@@ -35,55 +39,17 @@ public class IncluirActivity extends PrincipalActivity{
             public void onClick(View view) {
                 if (!validarEntradas()){
                     Toast.makeText(IncluirActivity.this,"Entrada Inválida", Toast.LENGTH_LONG).show();
+                }else{
+                    if  (incluirRegistro()){
+                        Toast.makeText(IncluirActivity.this,"Registro incluído com sucesso!", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
 
-//        Produto produto = new Produto();
-//        produto._id = 0L;
-//        produto.codigo = "1";
-//        produto.descricao = "Segundo";
-//        produto.preco_venda = 1.11;
-//        produtoRepositorio.inserirProduto(produto);
-//        List<Produto> produtos;
-//        try{
-//            Toast.makeText(this,"Entrou no 'try'", Toast.LENGTH_LONG).show();
-//            produtos = produtoRepositorio.listarProdutos();
-//            if (produtos.size() > 1){
-//                int tam = produtos.size();
-//                textView.setText("Tamanho: " + tam);
-//                for (int i=1; i<=tam; i++){
-//                    StringBuilder str = new StringBuilder();
-//                    str.append(produtos.get(i-1).descricao);
-//                    str.append(": ");
-//                    str.append(i);
-//                    str.append(" de ");
-//                    str.append(tam);
-//                    str.append("|");
-//                    str.append(produtos.get(i-1)._id);
-//                    textView.setText(str);
-//                }
-//            }else if(produtos.size()>0){
-//                Toast.makeText(this,"Entrou no 'if > 0'", Toast.LENGTH_LONG).show();
-//                textView.setText(produtos.get(0).descricao);
-//            }else{
-//                Toast.makeText(this,"Entrou no 'else'", Toast.LENGTH_LONG).show();
-//                textView.setText("Produtos = vazio");
-//            }
-//        }
-//        catch (Exception e){
-//            StringBuilder str = new StringBuilder();
-//            str.append("Erro: ");
-//            str.append(e.getMessage());
-//            textView.setText(str);
-//        }
-
-
-
-
     }
 
-    //---------------------------------- [ CRIAR CONEXAO ] ---------------------------------------------
+// [ VALIDAR ENTRADA ]
     private Boolean validarEntradas(){
         edtTxCdPrd = findViewById(R.id.edtTxCdPrd);
         edtTxDcr = findViewById(R.id.edtTxDcr);
@@ -100,9 +66,43 @@ public class IncluirActivity extends PrincipalActivity{
         }
         return vldc;
     }
-//---------------------------------- [ CRIAR CONEXAO - FIM ] ---------------------------------------
 
-//---------------------------------- [ CRIAR CONEXAO ] ---------------------------------------------
+    private Boolean incluirRegistro(){
+        edtTxCdPrd =findViewById(R.id.edtTxCdPrd);
+        edtTxDcr = findViewById(R.id.edtTxDcr);
+        edtTxPrecVnd = findViewById(R.id.edtTxPrecVnd);
+        Produto produto = new Produto();
+        produto.codigo = edtTxCdPrd.getText().toString();
+        produto.descricao = edtTxDcr.getText().toString();
+        produto.preco_venda = Double.parseDouble(edtTxPrecVnd.getText().toString());
+        produtoRepositorio.inserirProduto(produto);
+        List<Produto> produtos;
+        rstdQuery = findViewById(R.id.tv_Rstd);
+        try{
+            produtos = produtoRepositorio.listarProdutos();
+            if (produtos.size() >= 1){
+                int tam = produtos.size();
+                StringBuilder txAux = new StringBuilder();
+                txAux.append(tam).append(" | ");
+                txAux.append(produtos.get(tam-1).descricao).append(" | ");
+                txAux.append(produtos.get(tam-1)._id).append(" | ");
+                rstdQuery.setText(txAux);
+            }else{
+                Toast.makeText(this,"Entrou no 'else'", Toast.LENGTH_LONG).show();
+                rstdQuery.setText("Produtos = vazio");
+            }
+            return true;
+        }
+        catch (Exception e){
+            StringBuilder str = new StringBuilder();
+            str.append("Erro: ");
+            str.append(e.getMessage());
+            rstdQuery.setText(str);
+            return false;
+        }
+    }
+
+// [ CRIAR CONEXAO ]
     private void criarConexao(){
         try{
             testeOpenHelper = new TesteOpenHelper(this);
@@ -118,6 +118,6 @@ public class IncluirActivity extends PrincipalActivity{
             Toast.makeText(this,"ERRO na conexao", Toast.LENGTH_LONG).show();
         }
     }
-//---------------------------------- [ CRIAR CONEXAO - FIM ] ---------------------------------------
 
+//================================== [ FIM ] =======================================================
 }

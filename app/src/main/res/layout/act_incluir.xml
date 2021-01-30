@@ -8,43 +8,65 @@
     android:orientation="vertical">
 
 
-    <EditText
-        android:id="@+id/edtTxCdPrd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="@string/lblBtnCodigo"
-        android:inputType="number"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:padding="16dp">
+        <EditText
+            android:id="@+id/edtTxCdPrd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/lblBtnCodigo"
+            android:inputType="number"
+            android:layout_marginTop="8dp"/>
+        <EditText
+            android:id="@+id/edtTxDcr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/lblDescricao"
+            android:inputType="textPersonName"
+            android:layout_marginTop="8dp"/>
 
-    <EditText
-        android:id="@+id/edtTxDcr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/lblDescricao"
-        android:inputType="textPersonName"/>
+        <EditText
+            android:id="@+id/edtTxPrecVnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintPrecoVenda"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
 
-    <EditText
-        android:id="@+id/edtTxPrecVnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/hintPrecoVenda"
-        android:inputType="numberDecimal"/>
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnOk"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnOk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnOk"/>
-
-    <TextView
-        android:id="@+id/txViewRtl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lblUltimoRegistro"/>
-
-    <TextView
-        android:id="@+id/txViewRstd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/tv_Rtl_Rstd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblUltimoRegistro"
+            android:layout_margin="16dp"/>
+        <TextView
+            android:id="@+id/tv_Rstd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Resultado da query"
+            android:layout_margin="16dp"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault"/>
+    </LinearLayout>
 
 </LinearLayout>
